@@ -16,29 +16,25 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component'
-import cLink  from '../components/cLink.vue' 
-import * as T from '../types/common'
-
+import Vue from "vue";
+import Component from "vue-class-component";
+import cLink from "../components/cLink.vue";
+import * as T from "../types/common";
 
 @Component({
-  components: {cLink},
+  components: { cLink }
 })
-
 export default class cHello extends Vue {
-
-  onClick (): void {
-
-    
+  onClick(): void {
+    console.log("hello Github");
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
