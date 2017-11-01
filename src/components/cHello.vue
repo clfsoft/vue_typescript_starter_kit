@@ -26,7 +26,6 @@ import * as T from "../types/common";
 })
 export default class cHello extends Vue {
   onClick(): void {
-    console.log("hello Github");
   }
 }
 </script>
