@@ -2,7 +2,7 @@
   "name": "vuejs_typescript",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Hrair Mekhsian <hmekhsian@gmail.com>",
+  "author": "hmexx",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

@@ -3,11 +3,8 @@
     <h1 v-on:click="onClick">The {{this.$store.state.links.length}} html links below are defined in the Vuex store</h1> 
     <ul>
       <li v-for="link in this.$store.state.links" :key="link.url"><a :href="link.url">{{link.description}}</a></li>
-    </ul>
-    <br>
-    <button v-on:click="$store.commit('reverse')">Reverse the links using a mutation</button>
-    <br>
-    <br>
+    </ul><br>
+    <button v-on:click="$store.commit('reverse')">Reverse the links using a mutation</button><br><br>
     <h1>The link below is a .VUE Component [not a simple html tag]</h1>
     <ul>
       <li><cLink url="https://www.google.com" description="Google"/></li>
