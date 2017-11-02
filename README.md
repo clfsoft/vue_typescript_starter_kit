@@ -32,7 +32,43 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## One of the two example VUE components is below. A component that abstracts a URL.
+## ...here's the vuex store that doesn't do much but is strongly-typed :-)
+
+```typescript
+import Vue from 'vue'
+import Vuex from 'vuex'
+import { MutationTree, ActionTree } from 'vuex'
+import * as T from '../types/common'
+
+Vue.use(Vuex)
+
+interface State {
+  links: [T.Link]
+}
+
+const mutations: MutationTree<State> = {
+  reverse: (state) => state.links.reverse()
+}
+
+const actions: ActionTree<State, any> = {
+}
+
+const state: State = {
+  links: [
+    { url: "https://vuejs.org", description: "Core Docs" },
+    { url: "https://forum.vuejs.org", description: "Forum" },
+    { url: "https://chat.vuejs.org", description: "Community Chat" }
+  ]
+}
+
+export default new Vuex.Store<State>({
+  state,
+  mutations,
+  actions
+});
+```
+
+## ...and here is one of the two VUE components in the project. so simple!
 
 ```typescript
 <template>
@@ -70,3 +106,5 @@ a {
 }
 </style>
 ```
+
+
