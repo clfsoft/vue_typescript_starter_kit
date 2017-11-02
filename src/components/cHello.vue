@@ -1,16 +1,16 @@
 <template>
   <div class="hello">
-    <h1 v-on:click="onClick">{{this.$store.state.links.length}}</h1>
-    <h2 v-on:click="$store.commit('increment')">Essential Links</h2>
+    <h1 v-on:click="onClick">The {{this.$store.state.links.length}} html links below are defined in the Vuex store</h1> 
     <ul>
       <li v-for="link in this.$store.state.links" :key="link.url"><a :href="link.url">{{link.description}}</a></li>
     </ul>
-    <h2>Ecosystem</h2>
+    <br>
+    <button v-on:click="$store.commit('reverse')">Reverse the links using a mutation</button>
+    <br>
+    <br>
+    <h1>The link below is a .VUE Component [not a simple html tag]</h1>
     <ul>
       <li><cLink url="https://www.google.com" description="Google"/></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
   </div>
 </template>
@@ -26,6 +26,7 @@ import * as T from "../types/common";
 })
 export default class cHello extends Vue {
   onClick(): void {
+    console.log("a non-vuex method has been called");
   }
 }
 </script>
